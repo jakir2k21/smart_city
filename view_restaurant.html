@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Smart city </title>
+
+    <!-- font awesome 5 link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+
+        .main {
+
+            margin: 2%;
+        }
+
+        .card {
+            width: 20%;
+            display: inline-block;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px;
+            margin: 2%;
+        }
+
+        .image img {
+            width: 100%;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .title {
+
+            text-align: center;
+            padding: 10px;
+
+        }
+
+
+
+        .des {
+            padding: 3px;
+            text-align: center;
+
+            padding-top: 10px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        button {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            background-color: #e2dddd;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transition: .5s;
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="top_links">
+
+        <div id="header">
+            <h1 style="font-family: sans serif ;">Smart city system</h1>
+        </div>
+
+        <div id="navigation">
+            <ul>
+                <li><a href="view_park.html">View Park</a></li>
+                <li><a href="view_mall.html">View mall</a></li>
+                <li><a href="view_hospital.html">View Hospital</a></li>
+                <li><a href="view_city_info.html">Logout</a></li>
+            </ul>
+        </div>
+
+
+
+        <table style="width:897px; background:#e2dddd; margin:0 auto;">
+            <tr>
+                <td width="300" valign="top" style="border-right:#666666 1px dotted;">
+                    <h1
+                        style="margin-top:10px;margin-left: 30px; font-size: medium; font-family: 'Courier New', Courier, monospace;">
+                        Select one from above entities </h1>
+                </td>
+
+                <td width="1200" valign="top">
+                    <div>
+
+                        <h1
+                            style="margin-top:10px;margin-left: 30px; font-size: medium; font-family: 'Courier New', Courier, monospace;">
+                            All Restaurents in Tangail : </h1>
+
+                    </div>
+                </td>
+
+            </tr>
+
+        </table>
+
+
+
+        <div class="main">
+
+            <!--cards -->
+
+            <div class="card">
+
+                <div class="image">
+                    <img src="./hotelimage/piashi.jpg">
+                </div>
+                <div class="title">
+                    <h3>পিয়াসী </h3>
+                </div>
+                <div class="des">
+                    <p>নিরালা মোড় ,টাঙ্গাইল </p>
+                    <button><a href="foodmenu.html">Food Menu</a></button>
+                </div>
+            </div>
+            <!--cards -->
+
+
+            <div class="card">
+
+                <div class="image">
+                    <img src="./hotelimage/sugonda.jpg">
+                </div>
+                <div class="title">
+                    <h3>সুগন্দা </h3>
+                </div>
+                <div class="des">
+                    <p>পুরাতন বাস স্ট্যান্ড </p>
+                    <button><a href="foodmenu.html">Food Menu</a></button>
+
+                </div>
+            </div>
+            <!--cards -->
+
+
+            <div class="card">
+
+                <div class="image">
+                    <img src="./hotelimage/piashi.jpg">
+
+                </div>
+                <div class="title">
+                    <h3>নিরালা ঘর </h3>
+                </div>
+                <div class="des">
+                    <p>নিরালা মোড় ,টাঙ্গাইল </p>
+                    <button><a href="foodmenu.html">Food Menu</a></button>
+
+                </div>
+            </div>
+            <!--cards -->
+
+
+            <div class="card">
+
+                <div class="image">
+                    <img src="./hotelimage/victoria.jpg">
+                </div>
+                <div class="title">
+                    <h3>ভিক্টোরিয়া </h3>
+                </div>
+                <div class="des">
+                    <p>কালীবাড়ি রোড ,টাঙ্গাইল </p>
+                    <button><a href="foodmenu.html">Food Menu</a></button>
+
+                </div>
+            </div>
+            <!--cards -->
+
+            <div class="card">
+
+                <div class="image">
+                    <img src="./hotelimage/greenvil.jpg">
+                </div>
+                <div class="title">
+                    <h3>গ্রীন বিলেজ </h3>
+                </div>
+                <div class="des">
+                    <p>কালীবাড়ি রোড ,টাঙ্গাইল...</p>
+                    <button><a href="foodmenu.html">Food Menu</a></button>
+
+                </div>
+            </div>
+            <!--cards -->
+
+
+
+
+
+
+
+
+        </div>
+
+        <div id="footer_copyright">
+
+            <center>Designed and Developed by Jakir Hossen </center><br>
+            <p></p>
+
+        </div>
+
+        <!-- bootstrap js, jquery, popper -->
+        <script src="https://code.j0query.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+    </div>
+
+</body>
+
+</html>

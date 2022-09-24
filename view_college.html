@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- font awesome 5 link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- ===== Link Swiper's CSS ===== -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- ===== Fontawesome CDN Link ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Smart city System</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <style>
+    /* === Google Font Import - Poppins === */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box;
+      /*font-family: 'Poppins', sans-serif;*/
+    }
+
+    body {
+      font-family: sans serif ;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: whitesmoke;
+    }
+
+    section {
+      position: relative;
+      height: 400px;
+      width: 1075px;
+      display: flex;
+      align-items: center;
+    }
+
+    .swiper {
+      width: 800px;
+    }
+
+    .card {
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      height: 40%;
+      width: 100%;
+      background: #7d2ae8;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .card .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      position: relative;
+      z-index: 100;
+    }
+
+    section .card .image {
+      height: 140px;
+      width: 140px;
+      border-radius: 50%;
+      padding: 3px;
+      background: #7d2ae8;
+    }
+
+    section .card .image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .card .media-icons {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card .media-icons i {
+      color: #fff;
+      opacity: 0.6;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card .media-icons i:hover {
+      opacity: 1;
+    }
+
+    .card .name-profession {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      color: #6616d0;
+    }
+
+    .name-profession .name {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .name-profession .profession {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .card .rating {
+      display: flex;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .card .rating i {
+      font-size: 18px;
+      margin: 0 2px;
+      color: #7d2ae8;
+    }
+
+    .card .button {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .card .button button {
+      background: #7d2ae8;
+      outline: none;
+      border: none;
+      color: #fff;
+      padding: 8px 22px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .button button:hover {
+      background: #6616d0;
+    }
+
+    .swiper-pagination {
+      position: absolute;
+    }
+
+    .swiper-pagination-bullet {
+      height: 7px;
+      width: 26px;
+      border-radius: 25px;
+      background: #7d2ae8;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 0.7;
+      color: #7d2ae8;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      opacity: 1;
+      color: #7d2ae8;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="">
+
+    <header>
+
+      <div id="top_links">
+
+        <div id="header">
+          <h1 style="font-family: sans serif;">Smart city system<span class="style1"></span></h1>
+        </div>
+
+        <div id="navigation">
+          <ul>
+            <li><a href="login_after.html">Home</a></li>
+            <li><a href="view_library.html">View library</a></li>
+            <li><a href="view_city_info.html">View city info</a></li>
+            <li><a href="logout.html">Logout</a></li>
+          </ul>
+        </div>
+
+        <table style="width:897px; background:#FFFFFF; margin:0 auto;">
+          <tr>
+            <td width="300" valign="top" style="border-right:#666666 1px dotted;">
+
+
+            </td>
+
+            <td width="1200" valign="top">
+
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+
+            </td>
+          </tr>
+
+
+        </table>
+
+
+    </header>
+
+
+    <main>
+
+      <div>
+
+
+        <div class="swiper mySwiper container">
+          <div class="swiper-wrapper content">
+
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="height : 50px; width: 50px">
+                  <img style="height: 150px ;" src="./eduimg/mahmudulcol.jpg" alt="">
+                </div>
+
+                <div class="name-profession">
+                  <span class="name" style="font-size: 85%;">Mejor General Mahmudul Hasan College</span>
+                  <span class="profession">kalibari,Tangail.</span>
+
+
+                </div>
+
+                <div class="button" style="font-size: 85% ;">
+                  <a href="https://mgmhauc.edu.bd/">Visit Website </a>
+                  <a
+                    href="https://www.google.com/maps/place/Major+General+Mahmudul+Hasan+Adarsha+College,+Tangail/@24.2500096,89.9130706,17z/data=!3m1!4b1!4m5!3m4!1s0x39fdfbf01a9b669d:0x1cda93c5b42cce1f!8m2!3d24.2500047!4d89.9152593">google
+                    map </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height:150px ;" src="./eduimg/sc.jpg" alt="">
+                  <!-- <img src="C:\Users\User\Desktop\SmartCity\design\eduimg\sc.jpg" alt=""> -->
+                </div>
+
+
+
+                <div class="name-profession" >
+                  <span class="name" style="font-size: 85%;">Sristy Academic School and College</span>
+                  <span class="profession">Suparibagan,Tangail.</span>
+                </div>
+
+
+
+                <div class="button" style="font-size: 85% ;">
+                  <a href="">Visit Website</a>
+                  <a href="">google Map</a>
+
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 150px;" src="./eduimg/MMali.jpg" alt="">
+                </div>
+
+
+
+                <div class="name-profession" >
+                  <span class="name" style="font-size: 120%;">M M Ali College </span>
+                  <span class="profession">Kagmari ,Tangail.</span>
+                </div>
+
+
+
+                <div class="button" >
+                  <a href="">Visit Website</a>
+                  <a href="">google Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 150px;" src="./eduimg/sadat.png" alt="">
+                </div>
+
+
+
+                <div class="name-profession">
+                  <span class="name">Govt. Sadat College </span>
+                  <span class="profession">Korotia, Tangail.</span>
+                </div>
+
+
+
+                <div class="button">
+                  <a href="">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/place/%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF+%E0%A6%B8%E0%A6%BE'%E0%A6%A6%E0%A6%A4+%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C/@24.2206991,89.9719689,17z/data=!4m5!3m4!1s0x39fdff3c1b3816f7:0x6c712a6dc80c4f89!8m2!3d24.2206943!4d89.9761961">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 150px;" src="./eduimg/kumudini.jpg" alt="">
+                  <!-- <img src="C:\Users\User\Desktop\SmartCity\design\eduimg\kumudini.jpg" alt=""> -->
+                </div>
+
+
+                <div class="name-profession">
+                  <span class="name" style="font-size: 85%;">Kumudini govt. College </span>
+                  <span class="profession">Sabalia ,Tangail.</span>
+                </div>
+
+
+                <div class="button">
+                  <a href="">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/place/%E0%A6%95%E0%A7%81%E0%A6%AE%E0%A7%81%E0%A6%A6%E0%A6%BF%E0%A6%A8%E0%A7%80+%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF+%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C/@24.2571118,89.9205523,17z/data=!3m1!4b1!4m5!3m4!1s0x39fdfbe17e8254e7:0x23c2155f52369fee!8m2!3d24.2571069!4d89.922741">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height:150px ;" src="./eduimg/shahin.jpg" alt="">
+                </div>
+
+
+
+                <div class="name-profession">
+                  <span class="name" style="font-size:85%;">Shahin School and College </span>
+                  <span class="profession">RegistryPara,Tangail.</span>
+                </div>
+
+
+                <div class="button">
+                  <a href="https://www.shaheen.edu.bd/">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/search/shaheen+school+and+college+tangail/@24.2276967,89.871008,13z/data=!3m1!4b1">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 150px;" src="./eduimg/medical.jpg" alt="">
+                </div>
+
+
+
+                <div class="name-profession">
+                  <span class="name" style="font-size:small ;">Sheikh Hasina Medical College</span>
+                  <span class="profession">Kudalia,Tangail.</span>
+                </div>
+
+
+
+                <div class="button">
+                  <a href="https://en.wikipedia.org/wiki/Sheikh_Hasina_Medical_College,_Tangail">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/place/%E0%A6%B6%E0%A7%87%E0%A6%96+%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BF%E0%A6%A8%E0%A6%BE+%E0%A6%AE%E0%A7%87%E0%A6%A1%E0%A6%BF%E0%A6%95%E0%A7%87%E0%A6%B2+%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C,+%E0%A6%9F%E0%A6%BE%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A6%BE%E0%A6%87%E0%A6%B2/@24.2643725,89.9238384,17z/data=!3m1!4b1!4m5!3m4!1s0x39fdf917380d92c9:0x5d430a55656cb75c!8m2!3d24.2643676!4d89.9260271">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 140px;" src="./eduimg/MBSTU.png" alt="">
+                </div>
+
+
+
+                <div class="name-profession">
+                  <span class="name" style="font-size: small ;">Mawlana Bhashani Science and Technology University</span>
+                  <span class="profession" style="font-size: small;">Santosh,Tangail.</span>
+                </div>
+
+
+
+                <div class="button">
+                  <a href="https://mbstu.ac.bd/">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/place/%E0%A6%AE%E0%A6%BE%E0%A6%93%E0%A6%B2%E0%A6%BE%E0%A6%A8%E0%A6%BE+%E0%A6%AD%E0%A6%BE%E0%A6%B8%E0%A6%BE%E0%A6%A8%E0%A7%80+%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8+%E0%A6%93+%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AF%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF+%E0%A6%AC%E0%A6%BF%E0%A6%B6%E0%A7%8D%E0%A6%AC%E0%A6%AC%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B2%E0%A6%AF%E0%A6%BC/@24.2357699,89.8884139,17z/data=!3m1!4b1!4m5!3m4!1s0x39fdfc7edb573571:0xda791ddc1ce793bd!8m2!3d24.235765!4d89.8906026">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <div class="image">
+                  <img style="height: 150px ;" src="./eduimg/polytech.jpg" alt="">
+                </div>
+
+
+                <div class="name-profession">
+                  <span class="name" style="font-size: small;">Tangail polytechnique Institute </span>
+                  <span class="profession">Dewla ,Tangail.</span>
+                </div>
+
+
+
+                <div class="button">
+                  <a href="https://www.tpi.gov.bd/">Visit Website</a>
+                  <a
+                    href="https://www.google.com/maps/place/%E0%A6%9F%E0%A6%BE%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A6%BE%E0%A6%87%E0%A6%B2+%E0%A6%AA%E0%A6%B2%E0%A6%BF%E0%A6%9F%E0%A7%87%E0%A6%95%E0%A6%A8%E0%A6%BF%E0%A6%95+%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%BF%E0%A6%9F%E0%A6%BF%E0%A6%89%E0%A6%9F,+%E0%A6%9F%E0%A6%BE%E0%A6%99%E0%A7%8D%E0%A6%97%E0%A6%BE%E0%A6%87%E0%A6%B2/@24.2769308,89.9197397,15.92z/data=!4m5!3m4!1s0x39fdfbd757d45253:0x908290688169baf7!8m2!3d24.2755241!4d89.9208792">google
+                    Map</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+
+    </main>
+    <footer>
+
+      <div id="footer_copyright" style="font-family: sans serif ;">
+
+
+        <p></p>
+
+      </div>
+
+    </footer>
+
+
+
+
+    <!-- Swiper JS -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--<script src="C:\Users\User\Desktop\SmartCity\design\swiper_bundle.min.js"></script>-->
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+
+    <!-- bootstrap js, jquery, popper -->
+    <script src="https://code.j0query.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+
+
+  </div>
+
+</body>
+
+</html>
